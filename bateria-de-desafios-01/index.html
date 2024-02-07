@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div data-js="root"></div>
+
+    <script type="text/babel">
+        const user = {
+            avatar: "https://avatars.githubusercontent.com/u/13652821?v=4",
+            name: "Daniel Ferreira",
+            about: "Aprendiz, curioso e inovador assim é o resumo da minha definição no mundo da tecnologia.",
+            skills: [
+                {
+                    id: crypto.randomUUID(),
+                    emoji: "👎",
+                    name: "NestJS",
+                    bg: "bg-red"
+                },
+                {
+                    id: crypto.randomUUID(),
+                    emoji: "👌",
+                    name: "JavaScript",
+                    bg: "bg-lightblue"
+                },
+                {
+                    id: crypto.randomUUID(),
+                    emoji: "🤘",
+                    name: "Inglês",
+                    bg: "bg-pink"
+                },
+                {
+                    id: crypto.randomUUID(),
+                    emoji: "🤏",
+                    name: "ReactJS",
+                    bg: "bg-yellow"
+                }
+            ]
+        }
+
+        const Avatar = ({ avatarUrl }) => <img className="avatar" src={ avatarUrl } alt="icone do usuário" />
+
+        const Intro = ({ name, about }) => (
+            <div className="info">
+                <h1>{ name }</h1>
+                <p>{ about }</p>
+            </div>
+        )
+
+        const Skill = ({ skills }) =>
+            skills.map(({ id, emoji, name, bg }) =>
+                <li key={ id } className={ `skill ${ bg }` }>
+                    { emoji } { name }
+                </li>
+            )
+
+        const ListOfSkills = ({ skills }) => {
+            return (
+                <div className="skills">
+                    <ul className="list-of-skills" >
+                        <Skill skills={ skills } />
+                    </ul>
+                </div>
+            )
+        }
+
+        const App = () => {
+            const { avatar, name, about, skills } = user;
+            
+            return (
+            <>
+                <div className="card">
+                    <Avatar avatarUrl={ avatar } />
+
+                    <div className="info">
+                        <Intro
+                            name={ name }
+                            about={ about }
+                        />
+                        <ListOfSkills skills={ skills }/>
+                    </div>
+                </div>
+            </>
+        )
+        }
+
+        const container = document.querySelector('[data-js="root"]');
+        const root = ReactDOM.createRoot(container); //especifica qual elemento HTML será renderizado o JSX
+
+        root.render(<App />);
+    </script>
+</body>
+</html>
