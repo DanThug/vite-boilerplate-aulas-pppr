@@ -28,3 +28,8 @@ body {
   padding: 20px;
   cursor: pointer;
 }
+
+.active {
+  background-color: lightblue;
+  color: #292929;
+}

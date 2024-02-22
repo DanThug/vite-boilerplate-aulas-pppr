@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(77, 76, 76);
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+}
+
+select, input {
+  margin-left: 5px;
+}

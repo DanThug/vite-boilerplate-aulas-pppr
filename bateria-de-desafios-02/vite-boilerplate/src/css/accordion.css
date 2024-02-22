@@ -33,6 +33,14 @@ body {
   align-items: center;
 }
 
+.active {
+  border-top: 4px solid indianred;
+}
+
+.active > div:not(.content-box, .icon) {
+  color: indianred;
+}
+
 .number {
   font-size: 24px;
   font-weight: 500;
@@ -48,4 +56,8 @@ body {
   grid-column: 2 / -1;
   padding-bottom: 16px;
   line-height: 1.6;
+}
+
+.hide {
+  display: none;
 }

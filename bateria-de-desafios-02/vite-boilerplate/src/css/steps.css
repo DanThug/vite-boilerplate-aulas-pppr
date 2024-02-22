@@ -17,6 +17,10 @@ body {
   border: 2px solid #c3c3c3;
 }
 
+.fade-in {
+  animation: fadeIn 1.2s;
+}
+
 .numbers {
   display: flex;
   justify-content: space-between;
@@ -54,6 +58,10 @@ body {
   justify-content: space-between;
 }
 
+.buttons button:hover {
+  background-color: #159971;
+}
+
 .buttons button {
   border: none;
   cursor: pointer;
@@ -84,6 +92,11 @@ h3 {
   padding-top: 30px;
 }
 
+.container-close button:hover {
+  color: #292929;
+  background-color: #c3c3c3;
+}
+
 .close {
   border: 2px solid #c3c3c3;
   background-color: #292929;
@@ -96,4 +109,13 @@ h3 {
 
 .close:hover {
   cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

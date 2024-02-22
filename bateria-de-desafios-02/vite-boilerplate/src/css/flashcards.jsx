@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "./flashcards.css"
 
 const cardsInfo = [
@@ -33,20 +34,25 @@ const cardsInfo = [
     },
   ]
 
-const Cards = ({ id, question }) => {
-    const handleClick = id => console.log(id)
+const Cards = ({ question, answer }) => {
+  const [showAnswer, setShowAnswer] = useState(false)
+  const [classAnswer, setClassAnswer] = useState("")
+  const handleClick = () => {
+    setShowAnswer(showAnswer => !showAnswer)
+    setClassAnswer(classAnswer => classAnswer === "" ? "active" : "")
+  }
 
-    return (
-        <div className="card" onClick={ () => handleClick(id) }>{ question }</div>
-    )
+  return (
+      <div className={`card ${classAnswer}`} onClick={ handleClick }>{ showAnswer ? answer : question }</div>
+  )
 }
 
 const Flashcards = () => {
     return (
         <div className="flashcards">
             {
-              cardsInfo.map(({id, question}) =>
-                <Cards key={id} id={id} question={question} />
+              cardsInfo.map(({id, question, answer}) =>
+                <Cards key={id} question={question} answer={answer} />
               )
             }
         </div>
