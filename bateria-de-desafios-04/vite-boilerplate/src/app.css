@@ -9,6 +9,11 @@
     justify-content: space-between;
     flex-direction: column;
     height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    cursor: pointer;
 }
 
 header {
@@ -16,7 +21,6 @@ header {
     align-items: center;
     justify-content: center;
     color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px;
     padding: 5px 0;
 }
@@ -27,7 +31,6 @@ nav {
     justify-content: start;
     flex-direction: column;
     color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: indigo;
     width: 100%;
     padding: 20px 0;
@@ -62,19 +65,26 @@ nav input::placeholder {
 }
 
 nav button {
-    background-color: hotpink;
+    background-color: rgb(230, 72, 151);
     color: aliceblue;
     padding: 8px 15px;
     border-radius: 7px;
     border: none;
 }
 
+nav button:hover {
+    background-color: rgb(205, 52, 128);
+}
+
 main {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     color: aliceblue;
+    background-color: rgb(136, 121, 233);
+    width: 100%;
+    height: 100%;
 }
 
 main section {
@@ -104,12 +114,53 @@ main button {
     border: none;
 }
 
+section {
+    width: 100%;
+    margin: 25px 0;
+    gap: 7px;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    color: blueviolet;
+    font-weight: 700;
+    border: solid 1px blueviolet;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.item input {
+    width: 20px;
+    height: 25px;
+}
+
+.item span {
+    margin: 0 15px;
+}
+
+.item button {
+    background-color: indianred;
+}
+
+.item button:hover {
+    background-color: rgb(167, 56, 56);
+}
+
 footer {
     display: flex;
     align-items: center;
     justify-content: center;
     color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: indigo;
     width: 100%;
     padding: 40px 0;
